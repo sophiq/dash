@@ -1,0 +1,39 @@
+#include "user_init.h"
+#include "test_gptim.h"
+
+void GPTIM_Setup(void)
+{
+    FL_GPTIM_InitTypeDef        timInit;
+    FL_GPTIM_OC_InitTypeDef     timOCInit;
+    FL_GPIO_InitTypeDef         gpioInit = {0};
+
+    gpioInit.pin = FL_GPIO_PIN_10;
+    gpioInit.mode = FL_GPIO_MODE_DIGITAL;
+    gpioInit.outputType = FL_GPIO_OUTPUT_PUSHPULL;
+    gpioInit.pull = FL_DISABLE;
+    gpioInit.remapPin = FL_ENABLE;
+    FL_GPIO_Init(GPIOB, &gpioInit);
+
+    timInit.prescaler             = 8000 - 1;                     // 分频系数8000
+    timInit.counterMode           = FL_GPTIM_COUNTER_DIR_UP;   // 向上计数
+    timInit.autoReload            = 1000 - 1;                          // 自动重装载值1000
+    timInit.clockDivision         = FL_GPTIM_CLK_DIVISION_DIV1;  // 死区和滤波分频
+    timInit.autoReloadState       = FL_ENABLE;                       // 预装载preload使能
+    FL_GPTIM_Init(GPTIM0, &timInit);
+
+    timOCInit.OCMode       = FL_GPTIM_OC_MODE_PWM1;                  // 输出比较模式PWM1
+    timOCInit.OCETRFStatus = FL_DISABLE;                                // OC1REF不受ETR影响
+    timOCInit.OCFastMode   = FL_DISABLE;                                // 关闭快速使能
+    timOCInit.compareValue = 500;                                    // 比较值500
+    timOCInit.OCPolarity   = FL_GPTIM_OC_POLARITY_NORMAL;            // OC正常输出
+    timOCInit.OCPreload    = FL_DISABLE;                                // OC preload 无效
+    FL_GPTIM_OC_Init(GPTIM0, FL_GPTIM_CHANNEL_1, &timOCInit);
+
+    FL_GPTIM_Enable(GPTIM0);    // 使能定时器
+}
+
+void GPTIM_Loop(void)
+{
+    LED0_TOG();
+    FL_DelayMs(1000);
+}

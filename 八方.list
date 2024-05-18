@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<SendList m_dwCycles="5000">
+	<tagSendUint bIncreaseID="0" bIncreaseData="0" start_index="7" byte_length="1" iInterval="300" iTimes="100000" len="1" szname="" select="1" transmitas="0" obj="140404100000000000000001080000000000000000000000"></tagSendUint>
+	<tagSendUint bIncreaseID="0" bIncreaseData="0" start_index="0" byte_length="8" iInterval="100" iTimes="10000" len="1" szname="" select="1" transmitas="0" obj="03C4FF1F0000000000000001085632000000000000000000"></tagSendUint>
+	<tagSendUint bIncreaseID="0" bIncreaseData="0" start_index="0" byte_length="8" iInterval="200" iTimes="10000" len="1" szname="" select="1" transmitas="0" obj="01C4FF1F0000000000000001080000000001110000000000"></tagSendUint>
+	<tagSendUint bIncreaseID="0" bIncreaseData="0" start_index="0" byte_length="8" iInterval="500" iTimes="10000" len="1" szname="" select="1" transmitas="0" obj="02C4FF1F0000000000000001083300008800000000000000"></tagSendUint>
+	<tagSendUint bIncreaseID="0" bIncreaseData="1" start_index="7" byte_length="1" iInterval="200" iTimes="10000" len="1" szname="" select="1" transmitas="0" obj="00C4FF1F000000000000000108000000C306430000000000"></tagSendUint>
+	<tagSendUint bIncreaseID="0" bIncreaseData="0" start_index="7" byte_length="1" iInterval="500" iTimes="100000" len="1" szname="" select="1" transmitas="0" obj="05C4FF1F000000000000000108FFFF000000000000000000"></tagSendUint>
+</SendList>

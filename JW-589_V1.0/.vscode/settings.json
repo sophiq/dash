@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "idle.h": "c",
+        "lcd00_y094889vttfgs.h": "c",
+        "lcd.h": "c",
+        "bstim16.h": "c",
+        "idwt.h": "c",
+        "bsp_key.h": "c",
+        "adc.h": "c",
+        "lptim32.h": "c",
+        "user_init.h": "c",
+        "gptim.h": "c"
+    }
+}
